@@ -208,10 +208,8 @@ void MeshDemo::createBuffers() {
     // Set 2 : using combined image
     {
       // create sampler
-      VkPhysicalDeviceProperties properties{};
-      auto p_device =
-          global_matrix_engine.vk_holder->getVkContext().physical_device;
-      vkGetPhysicalDeviceProperties(p_device, &properties);
+      VkPhysicalDeviceProperties properties =
+          global_matrix_engine.vk_holder->getPhysicalDeviceProperties();
 
       VkSamplerCreateInfo samplerInfo{};
       samplerInfo.sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;

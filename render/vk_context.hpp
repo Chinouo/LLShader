@@ -51,6 +51,18 @@ class VkHolder final {
 
   VkContext getVkContext() const;
 
+  inline const VkPhysicalDeviceProperties &getPhysicalDeviceProperties() const {
+    return physical_device_properties_;
+  }
+
+  inline const VkPhysicalDeviceFeatures &getPhysicalDeviceFeature() const {
+    return physical_device_features_;
+  }
+
+  inline const VkPhysicalDeviceMemoryProperties &getMemoryProperties() const {
+    return memory_properties_;
+  }
+
  private:
   void init();
 
@@ -59,9 +71,14 @@ class VkHolder final {
 
   void createVkInstance();
   void pickVkPhysicalDevice();
+  void getProperties();
 
   VkInstance instance_;
   VkPhysicalDevice physical_device_;
+
+  VkPhysicalDeviceProperties physical_device_properties_;
+  VkPhysicalDeviceFeatures physical_device_features_;
+  VkPhysicalDeviceMemoryProperties memory_properties_;
 
 #ifdef DEBUG
   VkDebugUtilsMessengerEXT debugMessenger;
