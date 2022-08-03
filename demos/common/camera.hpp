@@ -58,7 +58,7 @@ class FPSCamera {
   float current_pitch_degree{0.f};
   float current_yaw_degree{0.f};
 
-  glm::vec3 position{0.f, 0.f, -20.f};
+  glm::vec3 position{0.f, 0.f, 0.f};
 };
 
 /// A camera never constraint direction rotate.

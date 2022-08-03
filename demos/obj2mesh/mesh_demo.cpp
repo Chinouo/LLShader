@@ -71,6 +71,9 @@ void MeshDemo::onNotification() {
   camera_uniform[current_frame_idx].obj.proj[1][1] *= -1;
 
   std::cout << camera_uniform[current_frame_idx].obj.proj[1][1] << std::endl;
+  auto v = fps_camera.getViewMatrix();
+  auto p = fps_camera.getPerspectiveProjectionMatrix();
+  p[1][1] *= -1;
 
   void* data;
   vkMapMemory(context.device, camera_uniform[current_frame_idx].obj_mem, 0,
@@ -129,14 +132,16 @@ void MeshDemo::drawUI() {
   {
     bool show_demo_window = true;
     ImGui::Begin("camera", &show_demo_window, ImGuiWindowFlags_MenuBar);
-    auto pos = fps_camera.getPosition();
+    // auto pos = fps_camera.getPosition();
+    // auto up = fps_camera.getUp();
+    // auto right = fps_camera.getRight();
+    // auto front = fps_camera.getForward();
+    auto pos = camera.getPosition();
+    auto up = camera.getUp();
+    auto right = camera.getRight();
+    auto front = camera.getForward();
 
     ImGui::Text("x: %.2f y: %.2f z: %.2f", pos.x, pos.y, pos.z);
-
-    auto up = fps_camera.getUp();
-    auto right = fps_camera.getRight();
-    auto front = fps_camera.getForward();
-
     ImGui::Text("up: %.2f, %.2f, %.2f", up.x, up.y, up.z);
     ImGui::Text("right: %.2f, %.2f, %.2f", right.x, right.y, right.z);
     ImGui::Text("front: %.2f, %.2f, %.2f", front.x, front.y, front.z);

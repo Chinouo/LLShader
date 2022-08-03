@@ -2,27 +2,10 @@
 
 set(DEMO_BUILD_ROOT ${PROJECT_BINARY_DIR}/demos)
     
-
-## triangle
-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/triangle/shaders"
-     DESTINATION "${DEMO_BUILD_ROOT}/triangle")
-
 message("${CMAKE_CURRENT_SOURCE_DIR}/triangle/shaders")
 message("${DEMO_BUILD_ROOT}/triangle")
 
-## pcss
-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/pcss/shaders"
-     DESTINATION "${DEMO_BUILD_ROOT}/pcss")
 
-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/pcss/assets"
-     DESTINATION "${DEMO_BUILD_ROOT}/pcss/")
-
-## shadow
-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/shadow/shaders"
-     DESTINATION "${DEMO_BUILD_ROOT}/shadow")
-
-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/shadow/assets"
-     DESTINATION "${DEMO_BUILD_ROOT}/shadow/")
 
 ## obj2mesh
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/obj2mesh/shaders"
@@ -30,3 +13,17 @@ file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/obj2mesh/shaders"
 
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/obj2mesh/assets"
      DESTINATION "${DEMO_BUILD_ROOT}/obj2mesh/")
+
+## shadowmap
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/shadowmap/shaders"
+     DESTINATION "${DEMO_BUILD_ROOT}/shadowmap")
+
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/shadowmap/assets"
+     DESTINATION "${DEMO_BUILD_ROOT}/shadowmap/")
+
+## pbr
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/pbr/shaders"
+     DESTINATION "${DEMO_BUILD_ROOT}/pbr")
+
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/pbr/assets"
+     DESTINATION "${DEMO_BUILD_ROOT}/pbr/")

@@ -1,9 +1,9 @@
 #include "shadow_demo.hpp"
 
+#include "demos/common/model_prototype.hpp"
 #include "engine/matrix.hpp"
 #include "util/assets_helper.hpp"
 #include "util/memory_ext.hpp"
-
 namespace LLShader {
 
 void ShadowMapDemo::init() {
