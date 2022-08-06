@@ -65,8 +65,10 @@ inline u_int32_t getDynamicAlignedSize2(u_int32_t size) {
   return t;
 }
 
-/// array used for dynamic uniform data.
-/// allocate mem at runtime, cal size at compile time.
+/// Array used for dynamic uniform data, only safe for explict data.
+/// Allocate mem at runtime, cal size at compile time.
+/// If your data contain some implict data such like pointer and
+/// call destruct function, it cause memory leak!!!
 template <typename _Tp, size_t _Size>
 class AlignedArray final {
  public:
